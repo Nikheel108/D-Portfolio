@@ -44,20 +44,53 @@
 
   /* ---------------- Nav (active tab + mobile panel) ---------------- */
   function initNav(){
-    var page = document.body.getAttribute("data-page");
-    if(page){
-      document.querySelectorAll('[data-page-link="' + page + '"]').forEach(function(el){
-        el.classList.add("active");
-      });
-    }
     var burger = document.querySelector("[data-hamburger]");
     var panel = document.querySelector("[data-mobile-panel]");
+    
+    // Toggle mobile menu
     if(burger && panel){
       burger.addEventListener("click", function(){
         panel.classList.toggle("open");
         var open = panel.classList.contains("open");
         burger.innerHTML = '<i class="fa-solid ' + (open ? "fa-xmark" : "fa-bars") + '"></i>';
       });
+    }
+
+    // Close mobile menu on link click
+    var navLinks = document.querySelectorAll('nav a, .mobile-panel a');
+    navLinks.forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        if (panel && panel.classList.contains('open')) {
+          panel.classList.remove('open');
+          if(burger) burger.innerHTML = '<i class="fa-solid fa-bars"></i>';
+        }
+      });
+    });
+
+    // Update active tab on scroll
+    var sections = document.querySelectorAll('main section[id]');
+    if (sections.length > 0 && "IntersectionObserver" in window) {
+      var io = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            var id = entry.target.getAttribute('id');
+            document.querySelectorAll('[data-page-link]').forEach(function(el) {
+              el.classList.remove('active');
+            });
+            document.querySelectorAll('[data-page-link="' + id + '"]').forEach(function(el) {
+              el.classList.add('active');
+            });
+          }
+        });
+      }, { threshold: 0.3, rootMargin: "-80px 0px 0px 0px" });
+      sections.forEach(function(s) { io.observe(s); });
+    } else {
+      var page = document.body.getAttribute("data-page");
+      if(page){
+        document.querySelectorAll('[data-page-link="' + page + '"]').forEach(function(el){
+          el.classList.add("active");
+        });
+      }
     }
   }
 
