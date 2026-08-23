@@ -399,6 +399,9 @@
       if(has("project","built","made","work")){
         return "Two to point you to right now: a Healthcare AI Assistant (Python + Streamlit) that does symptom checking, health tracking, and medication reminders — and this very portfolio, built with HTML5/CSS3/JS. Both are linked with code + live demo on the Projects page.";
       }
+      if(has("internship","intern","work","experience","job","lenovo","syntelligence")){
+        return "I recently completed two major internships: A GenAI Internship at Lenovo India (working with n8n, AI Agents, and RAG), and a PHP Web Developer role at SYNTELLIGENCE TECH (building an IoT Raspberry Pi monitoring system with ML). You can find all the details under the Internships section!";
+      }
       if(has("education","study","college","cgpa","marks","grade","school","10th","12th")){
         return "Currently a third-year B.Tech student in AI & ML at MIT Academy of Engineering, CGPA 8.64. Before that: 82.3% in 12th, and 99.52% in 10th (school topper, 4th in state under KSEEB). Full timeline on the Education page.";
       }
