@@ -107,6 +107,66 @@
 
   /* ---------------- Scroll reveal (notebook "execution") ---------------- */
   function initReveal(){
+
+  // 1. Boot Sequence
+  const bootScreen = document.getElementById('boot-screen');
+  if(bootScreen) {
+    const bootText = bootScreen.querySelector('.boot-text');
+    const lines = [
+      "> Loading Nikheel_CK.ipynb...",
+      "> Initializing AI Models...",
+      "> Fetching Edge Sensors...",
+      "> Access Granted."
+    ];
+    let bootDelay = 0;
+    lines.forEach((line) => {
+      setTimeout(() => {
+        const div = document.createElement('div');
+        div.innerText = line;
+        bootText.appendChild(div);
+      }, bootDelay);
+      bootDelay += 600 + Math.random() * 400;
+    });
+    setTimeout(() => { bootScreen.classList.add('hidden'); }, bootDelay + 500);
+  }
+
+  // 2. Cursor Glow
+  document.addEventListener('mousemove', (e) => {
+    document.documentElement.style.setProperty('--mouse-x', ${e.clientX}px);
+    document.documentElement.style.setProperty('--mouse-y', ${e.clientY}px);
+  });
+
+  // 3. Parallax Scroll
+  const parallaxIcons = document.querySelectorAll('.parallax-icon');
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    parallaxIcons.forEach((icon, i) => {
+      const speed = (i % 3 + 1) * 0.1;
+      // Combine with existing animation by wrapping or using margin
+      icon.style.marginTop = ${scrollY * speed}px;
+    });
+  });
+
+  // 4. 3D Tilt on Hero Figure
+  const heroFrame = document.querySelector('.hero-figure .frame');
+  if(heroFrame) {
+    heroFrame.addEventListener('mousemove', (e) => {
+      const rect = heroFrame.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const xPct = (x / rect.width - 0.5) * 2;
+      const yPct = (y / rect.height - 0.5) * 2;
+      heroFrame.style.transform = perspective(1000px) rotateY(deg) rotateX(deg);
+    });
+    heroFrame.addEventListener('mouseleave', () => {
+      heroFrame.style.transform = perspective(1000px) rotateY(0deg) rotateX(0deg);
+      setTimeout(() => { heroFrame.style.transition = 'transform 0.1s ease-out'; }, 10);
+    });
+    heroFrame.addEventListener('mouseenter', () => {
+      heroFrame.style.transition = 'none';
+    });
+  }
+
     var cells = document.querySelectorAll(".cell");
     if(!cells.length) return;
     if(!("IntersectionObserver" in window)){
