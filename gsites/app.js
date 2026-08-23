@@ -400,10 +400,10 @@
         return "Two to point you to right now: a Healthcare AI Assistant (Python + Streamlit) that does symptom checking, health tracking, and medication reminders — and this very portfolio, built with HTML5/CSS3/JS. Both are linked with code + live demo on the Projects page.";
       }
       if(has("education","study","college","cgpa","marks","grade","school","10th","12th")){
-        return "Currently a first-year B.Tech student in AI & ML at MIT Academy of Engineering, first-semester CGPA 8.9. Before that: 82.3% in 12th, and 99.52% in 10th (school topper, 4th in state under KSEEB). Full timeline on the Education page.";
+        return "Currently a first-year B.Tech student in AI & ML at MIT Academy of Engineering, first-semester CGPA 8.63. Before that: 82.3% in 12th, and 99.52% in 10th (school topper, 4th in state under KSEEB). Full timeline on the Education page.";
       }
       if(has("achieve","award","topper","rank","laptop")){
-        return "Highlights: school topper + 4th rank in the state (KSEEB board, 10th grade) — recognised with a laptop from the government — plus a district-level cultural performance built around social awareness. More on the Achievements page.";
+        return "Highlights: school topper + 4th rank in the state (KSEEB board, 10th grade) — recognised with a laptop from the government — plus a district-level cultural performance, and 2nd Runner Up in both TECHSPRINT & NIRMAN 4.0 by GDG built around social awareness. More on the Achievements page.";
       }
       if(has("contact","email","reach","phone","hire","mail","connect")){
         return "Best way in: email at 202401110020@mitaoe.ac.in or use the form on the Contact page. He's based near MIT Academy of Engineering, Alandi, Pune. LinkedIn, GitHub and Instagram links are all on that page too.";

@@ -434,3 +434,24 @@ footer{border-top:1px solid var(--rule);padding:26px 0 60px;margin-top:20px;}
 
 
 main section[id] { scroll-margin-top: 120px; }
+
+
+/* Floating Background Theme Elements */
+.floating-theme {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  overflow: hidden;
+}
+.floating-theme .floating {
+  position: absolute;
+  color: var(--amber-dim);
+  opacity: 0.15;
+  font-size: 3rem;
+  animation: floatAnim 15s infinite ease-in-out alternate;
+}
+@keyframes floatAnim {
+  0% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(-30px) rotate(15deg); }
+}
