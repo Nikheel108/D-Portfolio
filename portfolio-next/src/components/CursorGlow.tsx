@@ -21,8 +21,7 @@ export default function CursorGlow() {
     <div 
       className="fixed inset-0 pointer-events-none z-[9999] transition-colors duration-100"
       style={{
-        background: 
-adial-gradient(circle 400px at px px, , transparent 80%),
+        background: `radial-gradient(circle 400px at ${position.x}px ${position.y}px, ${isLight ? 'rgba(0,0,0,0.03)' : 'rgba(255,170,0,0.05)'}, transparent 80%)`,
         mixBlendMode: isLight ? 'multiply' : 'screen'
       }}
     />

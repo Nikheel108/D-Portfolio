@@ -1,4 +1,3 @@
-
 import type { Metadata } from "next";
 import { Space_Grotesk, JetBrains_Mono, Inter } from "next/font/google";
 import "./globals.css";
@@ -23,7 +22,7 @@ export default function RootLayout({
       <head>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
       </head>
-      <body className={${spaceGrotesk.variable}   bg-[#0B0D10] text-[#e1e4e8] font-sans antialiased}>
+      <body className={`${spaceGrotesk.variable} ${jetBrainsMono.variable} ${inter.variable} bg-[#0B0D10] text-[#e1e4e8] font-sans antialiased`}>
         <Navbar />
         {children}
       </body>

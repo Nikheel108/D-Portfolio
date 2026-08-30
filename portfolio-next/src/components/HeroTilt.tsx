@@ -1,5 +1,5 @@
 "use client";
-import { useState, useRef } from "react";
+import { useRef } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 
 export default function HeroTilt({ src, alt }: { src: string, alt: string }) {

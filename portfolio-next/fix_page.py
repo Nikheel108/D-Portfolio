@@ -1,4 +1,4 @@
-
+page_code = """
 import BootScreen from "@/components/BootScreen";
 import CursorGlow from "@/components/CursorGlow";
 import NotebookCell from "@/components/NotebookCell";
@@ -105,3 +105,6 @@ export default function Home() {
     </main>
   );
 }
+"""
+with open('src/app/page.tsx', 'w', encoding='utf-8') as f:
+    f.write(page_code)

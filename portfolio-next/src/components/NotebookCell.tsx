@@ -27,7 +27,7 @@ export default function NotebookCell({ id, cellNumber, children }: NotebookCellP
         transition={{ duration: 0.6, ease: "easeOut" }}
         className="grid grid-cols-[var(--gutter)_1fr] gap-[6px_20px]"
       >
-        <div className={ont-mono text-xs pt-1 whitespace-nowrap transition-colors }>
+        <div className={`font-mono text-xs pt-1 whitespace-nowrap transition-colors ${loading && executed ? 'text-[#ffaa00]' : 'text-[rgba(255,170,0,0.5)]'}`}>
           In [{loading && executed ? '*' : cellNumber}]:
         </div>
         
