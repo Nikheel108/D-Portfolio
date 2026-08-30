@@ -1,4 +1,4 @@
-
+page_code = """
 import BootScreen from "@/components/BootScreen";
 import CursorGlow from "@/components/CursorGlow";
 import NotebookCell from "@/components/NotebookCell";
@@ -65,7 +65,7 @@ export default function Home() {
               <span className="text-[#ff5f56]">&apos;cgpa&apos;</span>: <span className="text-[#79b8ff]">{portfolioData.about.stats.cgpa}</span>,
             </div>
             <div className="pl-4">
-              <span className="text-[#ff5f56]">&apos;languages&apos;</span>: <span className="text-[#e1e4e8]">[ {portfolioData.about.stats.languages.map(l => `'${l}'`).join(', ')} ]</span>,
+              <span className="text-[#ff5f56]">&apos;languages&apos;</span>: <span className="text-[#e1e4e8]">[ {portfolioData.about.stats.languages.map(l => `\'${l}\'`).join(', ')} ]</span>,
             </div>
             <div className="text-[#a4a9b6]">&#125;</div>
           </div>
@@ -196,3 +196,6 @@ export default function Home() {
     </main>
   );
 }
+"""
+with open('src/app/page.tsx', 'w', encoding='utf-8') as f:
+    f.write(page_code)

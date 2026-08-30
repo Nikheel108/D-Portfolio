@@ -1,4 +1,4 @@
-"use client";
+bootscreen_code = """"use client";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -54,3 +54,6 @@ export default function BootScreen() {
     </AnimatePresence>
   );
 }
+"""
+with open('src/components/BootScreen.tsx', 'w', encoding='utf-8') as f:
+    f.write(bootscreen_code)
